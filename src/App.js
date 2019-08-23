@@ -14,7 +14,15 @@ class  App extends  Component{
      ]
    }
    switchNameHandler = ()=>{
-     console.log('click ');
+     //console.log('click ');
+    // don't do this  this.state.persons[0].name = 'shafin';
+    this.setState({
+      persons:[
+      {name: 'shafin' , age:28 },
+      {name: 'fari' , age:9 },
+      {name: 'sani' , age:31 }
+    ]
+  });
    }
   render(){
     return(
@@ -23,8 +31,8 @@ class  App extends  Component{
             <p>this is p tag</p>
             <button onClick={this.switchNameHandler} > switch name  </button>
             <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-            <Person name={this.state.persons[1].name} age={this.state.persons[1].name} > my hobbies : developer </Person>
-            <Person name={this.state.persons[2].name} age={this.state.persons[2].name} />
+            <Person name={this.state.persons[1].name} age={this.state.persons[1].age} > my hobbies : developer </Person>
+            <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
         </div>
 
     )
