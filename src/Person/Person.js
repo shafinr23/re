@@ -4,7 +4,7 @@ const Person = (props ) =>{
      return(
           <div>
 
-               <p>i am a {props.name} and i am {props.age}  years old .</p>
+               <p onClick = {props.Click}>i am a {props.name} and i am {props.age}  years old .</p>
                <p>{props.children}</p>
 
           </div>
