@@ -49,23 +49,29 @@ class  App extends  Component{
       padding:'8px',  
       cursor:'pointer'
     };
+    let persons = null;
+    if(this.state.showPersons){
+      persons = (
+            <div>
+              {this.state.persons.map(person=>{
+                return <Person 
+                name={person.name}
+                age={person.age}
+                />
+              })}
+              
+            </div> 
+      )
+    }
     return(
         <div className="App">
             <h1>HI i am a react app</h1>
             <p>this is p tag</p>
             <button 
             style={style}
-            onClick={this.tooglePersonsHandler} > switch name  </button>
-            {this.state.showPersons === true ?
-            <div>
-              <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-              <Person name={this.state.persons[1].name} age={this.state.persons[1].age} 
-              Click={this.switchNameHandler.bind(this,'maxi')}
-              change={this.nameChangeHandeler}
-              > my hobbies : developer </Person>
-              <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
-            </div> : null
-            }
+            onClick={this.tooglePersonsHandler} > toggol name  </button>
+            
+            {persons}
         </div>
 
     )
