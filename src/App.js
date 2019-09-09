@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 
 import './App.css';
 import Person from './Person/Person';
-import Radium from 'radium';
+import Radium , {StyleRoot} from 'radium';
 
 
 
@@ -99,6 +99,7 @@ class  App extends  Component{
 
 
     return(
+      <StyleRoot>
         <div className="App">
             <h1>HI i am a react app</h1>
             <p className={classes.join(' ')} >this is p tag</p>
@@ -108,6 +109,7 @@ class  App extends  Component{
             
             {persons}
         </div>
+        </StyleRoot>
 
     )
     
