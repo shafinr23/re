@@ -16,6 +16,9 @@ class  App extends  Component{
      showPersons: false
    }
 
+
+
+
    deletePersoneHandler = (personIndex)=>{
       //const persons = this.state.persons.slice(); 
       const persons = [...this.state.persons];
@@ -51,14 +54,20 @@ class  App extends  Component{
     const doesShow = this.state.showPersons;
     this.setState({showPersons:!doesShow});
    }
+
+
   render(){
     const style = {
-      backgroundColor:'white',
+      backgroundColor:'green',
+      color:'white',
       font:'inharit',
       border:'2px solid blue',
       padding:'8px',  
-      cursor:'pointer'
+      cursor:'pointer',
+      
     };
+
+
     let persons = null;
     if(this.state.showPersons){
       persons = (
@@ -74,8 +83,11 @@ class  App extends  Component{
               })}
               
             </div> 
-      )
+      );
+      style.backgroundColor = 'red';
     }
+
+
     return(
         <div className="App">
             <h1>HI i am a react app</h1>
