@@ -78,7 +78,7 @@ class  App extends  Component{
       );
       style.backgroundColor='red';
     }
-
+    //let classes = ['red','blod'].join(' ');
     const classes = [];
     if(this.state.persons.length <= 2){
       classes.push('red'); //show red 
@@ -87,7 +87,7 @@ class  App extends  Component{
       classes.push('bold'); // shows red and blod
     }
 
-    
+
     return(
         <div className="App">
             <h1>HI i am a react app</h1>
