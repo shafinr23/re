@@ -16,9 +16,6 @@ class  App extends  Component{
      showPersons: false
    }
 
-
-
-
    deletePersoneHandler = (personIndex)=>{
       //const persons = this.state.persons.slice(); 
       const persons = [...this.state.persons];
@@ -54,8 +51,6 @@ class  App extends  Component{
     const doesShow = this.state.showPersons;
     this.setState({showPersons:!doesShow});
    }
-
-
   render(){
     const style = {
       backgroundColor:'green',
@@ -63,11 +58,8 @@ class  App extends  Component{
       font:'inharit',
       border:'2px solid blue',
       padding:'8px',  
-      cursor:'pointer',
-      
+      cursor:'pointer'
     };
-
-
     let persons = null;
     if(this.state.showPersons){
       persons = (
@@ -84,14 +76,22 @@ class  App extends  Component{
               
             </div> 
       );
-      style.backgroundColor = 'red';
+      style.backgroundColor='red';
     }
 
+    const classes = [];
+    if(this.state.persons.length <= 2){
+      classes.push('red'); //show red 
+    }
+    if(this.state.persons.length <= 1 ){
+      classes.push('bold'); // shows red and blod
+    }
 
+    
     return(
         <div className="App">
             <h1>HI i am a react app</h1>
-            <p>this is p tag</p>
+            <p className={classes.join(' ')} >this is p tag</p>
             <button 
             style={style}
             onClick={this.tooglePersonsHandler} > toggol name  </button>
