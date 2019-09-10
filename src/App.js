@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-import './App.css';
+import styles from './App.module.css';
 import Person from './Person/Person';
 
 
@@ -83,20 +83,20 @@ class  App extends  Component{
 
     }
     //let classes = ['red','blod'].join(' ');
-    const classes = [];
+    const AbbClasses = [];
     if(this.state.persons.length <= 2){
-      classes.push('red'); //show red 
+      AbbClasses.push(styles.red); //show red 
     }
     if(this.state.persons.length <= 1 ){
-      classes.push('bold'); // shows red and blod
+      AbbClasses.push(styles.bold); // shows red and blod
     }
 
 
     return(
      
-        <div className="App">
-            <h1>HI i am a react app</h1>
-            <p className={classes.join(' ')} >this is p tag</p>
+        <div className={styles.App}>
+            <h1> PhotoShop app</h1>
+            <p className={AbbClasses.join(' ')} >this is p tag</p>
             <button 
             style={style}
             onClick={this.tooglePersonsHandler} > toggol name  </button>
