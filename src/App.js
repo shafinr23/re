@@ -53,16 +53,9 @@ class  App extends  Component{
     this.setState({showPersons:!doesShow});
    }
   render(){
-    const style = {
-      backgroundColor:'green',
-      color:'white',
-      font:'inharit',
-      border:'2px solid blue',
-      padding:'8px',  
-      cursor:'pointer',
-      
-    };
+
     let persons = null;
+    let btnClass = '';
     if(this.state.showPersons){
       persons = (
             <div>
@@ -78,7 +71,7 @@ class  App extends  Component{
               
             </div> 
       );
-      style.backgroundColor='red';
+      btnClass = styles.red;
      
 
     }
@@ -98,7 +91,7 @@ class  App extends  Component{
             <h1> PhotoShop app</h1>
             <p className={AbbClasses.join(' ')} >this is p tag</p>
             <button 
-            style={style}
+           className={btnClass}
             onClick={this.tooglePersonsHandler} > toggol name  </button>
             
             {persons}
