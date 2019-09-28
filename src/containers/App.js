@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 
 import styles from './App.module.css';
-import Person from '../Components/Persons/Person/Person';
+import Persons from '../Components/Persons/persons';
+import Cockpit from '../Components/cockpit/cockpit';
+
 
 
 
@@ -55,11 +57,15 @@ class  App extends  Component{
   render(){
 
     let persons = null;
-    let btnClass = '';
+
     if(this.state.showPersons){
-      persons = (
-            <div>
-              {this.state.persons.map((persons,index)=>{
+      persons = 
+              <Persons 
+              persons={this.state.persons}
+              clicked={this.deletePersoneHandler}
+              changed={this.nameChangeHandeler}
+               />
+              {/* {this.state.persons.map((persons,index)=>{
                 return <Person 
                 Click={() =>this.deletePersoneHandler(index)}
                 name={persons.name}
@@ -67,11 +73,9 @@ class  App extends  Component{
                 key={persons.id}
                 change={(event)=>this.nameChangeHandeler(event, persons.id)}
                 />
-              })}
+              })} */}
               
-            </div> 
-      );
-      btnClass = styles.red;
+           
      
 
     }
@@ -88,12 +92,11 @@ class  App extends  Component{
     return(
      
         <div className={styles.App}>
-            <h1> PhotoShop app</h1>
-            <p className={AbbClasses.join(' ')} >this is p tag</p>
-            <button 
-           className={btnClass}
-            onClick={this.tooglePersonsHandler} > toggol name  </button>
-            
+           <Cockpit
+           showPersons={this.state.showPersons}
+           persons={this.state.persons}
+           clicked={this.tooglePersonsHandler}
+           />
             {persons}
         </div>
        
